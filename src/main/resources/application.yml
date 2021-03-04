@@ -1,0 +1,39 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: ylg-sign-in
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.xxx.xxx:xxxx/ylg_sign_in?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username:
+    password:
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true
+  jackson:
+    #设置时间格式
+    date-format: HH:mm
+    #设置时区
+    time-zone: GMT+8
+  cache:
+    type: redis
+  redis:
+    host:
+    port:
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+jwt:
+  config:
+    key: ylg-sign-in
+    ttl: 2592000000
+weixin:
+  config:
+    appid:
+    secret:
